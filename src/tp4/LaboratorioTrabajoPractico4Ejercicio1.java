@@ -1,4 +1,4 @@
-package laboratorio.trabajopractico4.ejercicio1;
+package tp4;
 
 /**
  *

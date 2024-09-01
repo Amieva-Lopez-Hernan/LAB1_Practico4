@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-package igu;
+package tp4.vistas;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -58,6 +60,24 @@ public class VistasMateria extends javax.swing.JInternalFrame {
         jLabel4.setForeground(new java.awt.Color(51, 153, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("AÑO AL QUE PERTENECE:");
+
+        jtCodmateria.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jtCodmateriaFocusLost(evt);
+            }
+        });
+
+        jtNommateria.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jtNommateriaFocusLost(evt);
+            }
+        });
+
+        jtAniomateria.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jtAniomateriaFocusLost(evt);
+            }
+        });
 
         jbSalir.setText("Salir");
         jbSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -143,6 +163,40 @@ public class VistasMateria extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jbSalirActionPerformed
+
+    private void jtCodmateriaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtCodmateriaFocusLost
+        // TODO add your handling code here:
+        String val = "[0-9]*";
+        if (!jtCodmateria.getText().matches(val)){
+            JOptionPane.showMessageDialog(this, "En el apartado Codigo de Materia solo debe ingresar numeros.");
+            jtCodmateria.requestFocus();
+        }
+    }//GEN-LAST:event_jtCodmateriaFocusLost
+
+    private void jtNommateriaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtNommateriaFocusLost
+        // TODO add your handling code here:
+        String val = "[a-zA-Z]*";
+        if (!jtNommateria.getText().matches(val)){
+            JOptionPane.showMessageDialog(this, "En el apartado Nombre de la Materia solo debe ingresar letras.");
+            jtNommateria.requestFocus();
+        }
+    }//GEN-LAST:event_jtNommateriaFocusLost
+
+    private void jtAniomateriaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtAniomateriaFocusLost
+        // TODO add your handling code here:
+        String val = "[0-9]*";
+        int cmateria = 0;
+        if (jtAniomateria.getText().matches(val) && !jtAniomateria.getText().isEmpty()){
+            cmateria = Integer.parseInt(jtAniomateria.getText());
+        }
+        if (!jtAniomateria.getText().matches(val)){
+            JOptionPane.showMessageDialog(this, "En el apartado Año al que pertenece solo debe ingresar numeros.");
+            jtAniomateria.requestFocus();
+        } else if (!jtAniomateria.getText().isEmpty() && (cmateria < 1 || cmateria >5)){
+            JOptionPane.showMessageDialog(this, "El numero ingresado en el apartado Año al que pertenece debe ser entre 1 y 5.");
+            jtAniomateria.requestFocus();
+        }
+    }//GEN-LAST:event_jtAniomateriaFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package igu;
+package tp4.vistas;
 
 import java.util.HashSet;
-import laboratorio.trabajopractico4.ejercicio1.Alumno;
+import tp4.entidades.Alumno;
 
 /**
  *
@@ -40,7 +40,7 @@ public class VistasMenu extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jmiInscribir = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jmiSalir = new javax.swing.JCheckBoxMenuItem();
+        jmiSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,14 +82,23 @@ public class VistasMenu extends javax.swing.JFrame {
         jMenu3.setText("Registro");
 
         jmiInscribir.setText("Inscribir");
+        jmiInscribir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiInscribirActionPerformed(evt);
+            }
+        });
         jMenu3.add(jmiInscribir);
 
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Salir");
 
-        jmiSalir.setSelected(true);
-        jmiSalir.setText("Salir del Registro");
+        jmiSalir.setText("Salir");
+        jmiSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiSalirActionPerformed(evt);
+            }
+        });
         jMenu4.add(jmiSalir);
 
         jMenuBar1.add(jMenu4);
@@ -130,6 +139,21 @@ public class VistasMenu extends javax.swing.JFrame {
         escritorio.add(vistaAlum);
         escritorio.moveToFront(vistaAlum);
     }//GEN-LAST:event_jmiAgreAlumnoActionPerformed
+
+    private void jmiInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiInscribirActionPerformed
+        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        VistasInscribir vistaInsc= new VistasInscribir();
+        vistaInsc.setVisible(true);
+        escritorio.add(vistaInsc);
+        escritorio.moveToFront(vistaInsc);
+    }//GEN-LAST:event_jmiInscribirActionPerformed
+
+    private void jmiSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiSalirActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jmiSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,6 +201,6 @@ public class VistasMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmiAgreAlumno;
     private javax.swing.JMenuItem jmiAgreMateria;
     private javax.swing.JMenuItem jmiInscribir;
-    private javax.swing.JCheckBoxMenuItem jmiSalir;
+    private javax.swing.JMenuItem jmiSalir;
     // End of variables declaration//GEN-END:variables
 }

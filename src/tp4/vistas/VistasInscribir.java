@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-package igu;
+package tp4.vistas;
 
 /**
  *
  * @author Hernan
  */
-public class VistasIncribir extends javax.swing.JInternalFrame {
+public class VistasInscribir extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form VistasIncribir
      */
-    public VistasIncribir() {
+    public VistasInscribir() {
         initComponents();
     }
 
@@ -34,7 +34,7 @@ public class VistasIncribir extends javax.swing.JInternalFrame {
         jbSalir = new javax.swing.JButton();
         jbInscribir = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(450, 250));
+        setPreferredSize(new java.awt.Dimension(450, 300));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 153, 255));
@@ -60,6 +60,11 @@ public class VistasIncribir extends javax.swing.JInternalFrame {
         jComboBox2.setSelectedIndex(-1);
 
         jbSalir.setText("Salir");
+        jbSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSalirActionPerformed(evt);
+            }
+        });
 
         jbInscribir.setText("Inscribir");
 
@@ -111,6 +116,11 @@ public class VistasIncribir extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jbSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

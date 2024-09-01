@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-package igu;
+package tp4.vistas;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -58,6 +60,24 @@ public class VistasAlumno extends javax.swing.JInternalFrame {
         jLabel4.setForeground(new java.awt.Color(51, 153, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("NOMBRE:");
+
+        jtLegajo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jtLegajoFocusLost(evt);
+            }
+        });
+
+        jtApellido.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jtApellidoFocusLost(evt);
+            }
+        });
+
+        jtNombre.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jtNombreFocusLost(evt);
+            }
+        });
 
         jbSalir.setText("Salir");
         jbSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -147,6 +167,33 @@ public class VistasAlumno extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jbSalirActionPerformed
+
+    private void jtLegajoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtLegajoFocusLost
+        // TODO add your handling code here:
+        String val = "[0-9]*";
+        if (!jtLegajo.getText().matches(val)){
+            JOptionPane.showMessageDialog(this, "En el apartado Legajo solo debe ingresar numeros.");
+            jtLegajo.requestFocus();
+        }
+    }//GEN-LAST:event_jtLegajoFocusLost
+
+    private void jtApellidoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtApellidoFocusLost
+        // TODO add your handling code here:
+        String val = "[a-zA-Z]*";
+        if (!jtApellido.getText().matches(val)){
+            JOptionPane.showMessageDialog(this, "En el apartado Apellido solo debe ingresar letras.");
+            jtApellido.requestFocus();
+        }
+    }//GEN-LAST:event_jtApellidoFocusLost
+
+    private void jtNombreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtNombreFocusLost
+        // TODO add your handling code here:
+        String val = "[a-zA-Z]*";
+        if (!jtNombre.getText().matches(val)){
+            JOptionPane.showMessageDialog(this, "En el apartado Nombre solo debe ingresar letras.");
+            jtNombre.requestFocus();
+        }
+    }//GEN-LAST:event_jtNombreFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
