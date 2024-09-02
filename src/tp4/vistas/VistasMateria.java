@@ -4,19 +4,22 @@
  */
 package tp4.vistas;
 
+import java.util.HashSet;
 import javax.swing.JOptionPane;
+import tp4.entidades.Materia;
 
 /**
  *
  * @author Hernan
  */
 public class VistasMateria extends javax.swing.JInternalFrame {
-
+    private HashSet <Materia> mat;
     /**
      * Creates new form VistasMateria
      */
-    public VistasMateria() {
+    public VistasMateria(HashSet <Materia> mat) {
         initComponents();
+        
     }
 
     /**

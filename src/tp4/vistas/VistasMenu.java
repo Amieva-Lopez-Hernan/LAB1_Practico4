@@ -6,6 +6,7 @@ package tp4.vistas;
 
 import java.util.HashSet;
 import tp4.entidades.Alumno;
+import tp4.entidades.Materia;
 
 /**
  *
@@ -14,6 +15,7 @@ import tp4.entidades.Alumno;
 public class VistasMenu extends javax.swing.JFrame {
     
     public static HashSet<Alumno> listaAlumnos= new HashSet ();
+    public static HashSet<Materia> listaMaterias= new HashSet ();
 
     /**
      * Creates new form NewJFrame
@@ -124,7 +126,7 @@ public class VistasMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         escritorio.removeAll();
         escritorio.repaint();
-        VistasMateria vistaMat= new VistasMateria();
+        VistasMateria vistaMat= new VistasMateria(listaMaterias);
         vistaMat.setVisible(true);
         escritorio.add(vistaMat);
         escritorio.moveToFront(vistaMat);
@@ -134,7 +136,7 @@ public class VistasMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         escritorio.removeAll();
         escritorio.repaint();
-        VistasAlumno vistaAlum= new VistasAlumno();
+        VistasAlumno vistaAlum= new VistasAlumno(listaAlumnos);
         vistaAlum.setVisible(true);
         escritorio.add(vistaAlum);
         escritorio.moveToFront(vistaAlum);
@@ -144,7 +146,7 @@ public class VistasMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         escritorio.removeAll();
         escritorio.repaint();
-        VistasInscribir vistaInsc= new VistasInscribir();
+        VistasInscribir vistaInsc= new VistasInscribir(listaAlumnos,listaMaterias);
         vistaInsc.setVisible(true);
         escritorio.add(vistaInsc);
         escritorio.moveToFront(vistaInsc);

@@ -4,18 +4,20 @@
  */
 package tp4.vistas;
 
+import java.util.HashSet;
 import javax.swing.JOptionPane;
+import tp4.entidades.Alumno;
 
 /**
  *
  * @author Hernan
  */
 public class VistasAlumno extends javax.swing.JInternalFrame {
-
+    private HashSet <Alumno> alu;
     /**
      * Creates new form VistasAlumno
      */
-    public VistasAlumno() {
+    public VistasAlumno(HashSet <Alumno> alu) {
         initComponents();
     }
 
