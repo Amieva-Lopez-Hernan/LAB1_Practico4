@@ -18,10 +18,10 @@ public class VistasInscribir extends javax.swing.JInternalFrame {
     /**
      * Creates new form VistasIncribir
      */
-    public VistasInscribir(HashSet <Alumno> alu, HashSet <Materia> mat) {
+    public VistasInscribir(HashSet<Alumno>alu, HashSet <Materia> mat) {
         initComponents();
-        this.alu = alu;
-        this.mat = mat;
+        this.alu = VistasMenu.listaAlumnos;
+        this.mat = VistasMenu.listaMaterias;
         agregarAlumno();
         agregarMateria();
     }
@@ -61,10 +61,8 @@ public class VistasInscribir extends javax.swing.JInternalFrame {
         jLabel3.setText("ELIJA UN ALUMNO:");
 
         jcbMateria.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jcbMateria.setSelectedIndex(-1);
 
         jcbAlumno.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jcbAlumno.setSelectedIndex(-1);
 
         jbSalir.setText("Salir");
         jbSalir.addActionListener(new java.awt.event.ActionListener() {

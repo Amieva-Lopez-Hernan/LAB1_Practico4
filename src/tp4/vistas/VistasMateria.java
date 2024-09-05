@@ -13,14 +13,15 @@ import tp4.entidades.Materia;
  * @author Hernan
  */
 public class VistasMateria extends javax.swing.JInternalFrame {
-    private HashSet <Materia> mat;
+    private HashSet<Materia> mat;
     /**
      * Creates new form VistasMateria
      */
-    public VistasMateria(HashSet <Materia> mat) {
+    public VistasMateria(HashSet <Materia>mat) {
         initComponents();
-        
+        this.mat=VistasMenu.listaMaterias;
     }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -97,6 +98,11 @@ public class VistasMateria extends javax.swing.JInternalFrame {
         });
 
         jbGuardar.setText("Guardar");
+        jbGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbGuardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,6 +176,7 @@ public class VistasMateria extends javax.swing.JInternalFrame {
     private void jtCodmateriaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtCodmateriaFocusLost
         // TODO add your handling code here:
         String val = "[0-9]*";
+        
         if (!jtCodmateria.getText().matches(val)){
             JOptionPane.showMessageDialog(this, "En el apartado Codigo de Materia solo debe ingresar numeros.");
             jtCodmateria.requestFocus();
@@ -200,6 +207,12 @@ public class VistasMateria extends javax.swing.JInternalFrame {
             jtAniomateria.requestFocus();
         }
     }//GEN-LAST:event_jtAniomateriaFocusLost
+
+    private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
+        // TODO add your handling code here:
+        Materia materia=new Materia(Integer.parseInt(jtCodmateria.getText()), jtNommateria.getText(), Integer.parseInt(jtAniomateria.getText()) );
+        mat.add(materia);
+    }//GEN-LAST:event_jbGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
