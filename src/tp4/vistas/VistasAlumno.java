@@ -19,6 +19,7 @@ public class VistasAlumno extends javax.swing.JInternalFrame {
      */
     public VistasAlumno(HashSet <Alumno> alu) {
         initComponents();
+        this.alu=VistasMenu.listaAlumnos;
     }
 
     /**
@@ -96,6 +97,11 @@ public class VistasAlumno extends javax.swing.JInternalFrame {
         });
 
         jbGuardar.setText("Guardar");
+        jbGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbGuardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -196,6 +202,13 @@ public class VistasAlumno extends javax.swing.JInternalFrame {
             jtNombre.requestFocus();
         }
     }//GEN-LAST:event_jtNombreFocusLost
+
+    private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
+        // TODO add your handling code here:
+        Alumno alumno=new Alumno(Integer.parseInt(jtLegajo.getText()),jtApellido.getText(),jtNombre.getText());
+        alu.add(alumno);
+        
+    }//GEN-LAST:event_jbGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
