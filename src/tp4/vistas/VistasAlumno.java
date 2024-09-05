@@ -7,6 +7,7 @@ package tp4.vistas;
 import java.util.HashSet;
 import javax.swing.JOptionPane;
 import tp4.entidades.Alumno;
+import tp4.entidades.Materia;
 
 /**
  *
@@ -14,12 +15,14 @@ import tp4.entidades.Alumno;
  */
 public class VistasAlumno extends javax.swing.JInternalFrame {
     private HashSet <Alumno> alu;
+    private HashSet<Materia>matAgreg;
     /**
      * Creates new form VistasAlumno
      */
-    public VistasAlumno(HashSet <Alumno> alu) {
+    public VistasAlumno(HashSet <Alumno> alu, HashSet<Materia>matAgreg) {
         initComponents();
         this.alu=VistasMenu.listaAlumnos;
+        this.matAgreg=VistasMenu.materiasAgregadas;
     }
 
     /**
@@ -205,7 +208,7 @@ public class VistasAlumno extends javax.swing.JInternalFrame {
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
         // TODO add your handling code here:
-        Alumno alumno=new Alumno(Integer.parseInt(jtLegajo.getText()),jtApellido.getText(),jtNombre.getText());
+        Alumno alumno=new Alumno(Integer.parseInt(jtLegajo.getText()),jtApellido.getText(),jtNombre.getText(),VistasMenu.materiasAgregadas);
         alu.add(alumno);
         
     }//GEN-LAST:event_jbGuardarActionPerformed

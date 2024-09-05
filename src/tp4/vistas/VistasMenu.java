@@ -16,6 +16,7 @@ public class VistasMenu extends javax.swing.JFrame {
     
     public static HashSet<Alumno> listaAlumnos= new HashSet ();
     public static HashSet<Materia> listaMaterias= new HashSet ();
+    public static HashSet<Materia> materiasAgregadas=new HashSet();
 
     /**
      * Creates new form NewJFrame
@@ -136,7 +137,7 @@ public class VistasMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         escritorio.removeAll();
         escritorio.repaint();
-        VistasAlumno vistaAlum= new VistasAlumno(listaAlumnos);
+        VistasAlumno vistaAlum= new VistasAlumno(listaAlumnos, materiasAgregadas);
         vistaAlum.setVisible(true);
         escritorio.add(vistaAlum);
         escritorio.moveToFront(vistaAlum);
@@ -146,7 +147,7 @@ public class VistasMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         escritorio.removeAll();
         escritorio.repaint();
-        VistasInscribir vistaInsc= new VistasInscribir(listaAlumnos,listaMaterias);
+        VistasInscribir vistaInsc= new VistasInscribir(listaAlumnos,listaMaterias, materiasAgregadas);
         vistaInsc.setVisible(true);
         escritorio.add(vistaInsc);
         escritorio.moveToFront(vistaInsc);
