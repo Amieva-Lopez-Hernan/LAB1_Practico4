@@ -46,6 +46,9 @@ public class VistasMenu extends javax.swing.JFrame {
         jmiSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Inscripción a Materias");
+
+        escritorio.setToolTipText("");
 
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);

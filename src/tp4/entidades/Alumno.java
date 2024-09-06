@@ -50,7 +50,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return apellido + " " + nombre;
+        return legajo+" - "+apellido + ", " + nombre;
     }
     
     public void agregarMateria (Materia materia){
@@ -86,6 +86,5 @@ public class Alumno {
         final Alumno other = (Alumno) obj;
         return this.legajo == other.legajo;
     }
-    
     
 }

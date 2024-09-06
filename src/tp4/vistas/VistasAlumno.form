@@ -27,7 +27,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel1" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="184" max="32767" attributes="0"/>
                       <Component id="jbGuardar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jbNuevo" min="-2" max="-2" attributes="0"/>
@@ -39,7 +39,7 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel2" min="-2" pref="150" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jtLegajo" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="jtLegajo" min="-2" pref="117" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -48,12 +48,12 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jtApellido" max="32767" attributes="0"/>
-                                  <Component id="jtNombre" pref="225" max="32767" attributes="0"/>
+                                  <Component id="jtApellido" pref="242" max="32767" attributes="0"/>
+                                  <Component id="jtNombre" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="55" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>

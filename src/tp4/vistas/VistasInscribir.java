@@ -102,8 +102,8 @@ public class VistasInscribir extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jcbMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 18, Short.MAX_VALUE)))
+                                .addComponent(jcbMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 8, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -143,13 +143,13 @@ public class VistasInscribir extends javax.swing.JInternalFrame {
    
     private void agregarAlumno(){
         for (Alumno a1: alu){
-            jcbAlumno.addItem(a1.toString());
+            jcbAlumno.addItem(a1);
         }
     }
     
     private void agregarMateria(){
         for (Materia m1: mat){
-            jcbMateria.addItem(m1.toString());
+            jcbMateria.addItem(m1);
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -158,7 +158,7 @@ public class VistasInscribir extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton jbInscribir;
     private javax.swing.JButton jbSalir;
-    private javax.swing.JComboBox<String> jcbAlumno;
-    private javax.swing.JComboBox<String> jcbMateria;
+    private javax.swing.JComboBox<Alumno> jcbAlumno;
+    private javax.swing.JComboBox<Materia> jcbMateria;
     // End of variables declaration//GEN-END:variables
 }
