@@ -67,18 +67,21 @@ public class VistasAlumno extends javax.swing.JInternalFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("NOMBRE:");
 
+        jtLegajo.setEnabled(false);
         jtLegajo.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jtLegajoFocusLost(evt);
             }
         });
 
+        jtApellido.setEnabled(false);
         jtApellido.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jtApellidoFocusLost(evt);
             }
         });
 
+        jtNombre.setEnabled(false);
         jtNombre.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jtNombreFocusLost(evt);
@@ -100,6 +103,7 @@ public class VistasAlumno extends javax.swing.JInternalFrame {
         });
 
         jbGuardar.setText("Guardar");
+        jbGuardar.setEnabled(false);
         jbGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbGuardarActionPerformed(evt);
@@ -171,6 +175,7 @@ public class VistasAlumno extends javax.swing.JInternalFrame {
         jtLegajo.setText("");
         jtApellido.setText("");
         jtNombre.setText("");
+        activarCampos();
         
     }//GEN-LAST:event_jbNuevoActionPerformed
 
@@ -214,8 +219,22 @@ public class VistasAlumno extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(null,"El alumno que intenta agregar ya existe!");
         }
+        desactivarCampos();
     }//GEN-LAST:event_jbGuardarActionPerformed
-
+    
+        private void desactivarCampos (){
+        jtLegajo.setEnabled(false);
+        jtApellido.setEnabled(false);
+        jtNombre.setEnabled(false);
+        jbGuardar.setEnabled(false);
+    }
+    
+    private void activarCampos (){
+        jtLegajo.setEnabled(true);
+        jtApellido.setEnabled(true);
+        jtNombre.setEnabled(true);
+        jbGuardar.setEnabled(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

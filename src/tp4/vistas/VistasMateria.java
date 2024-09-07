@@ -65,18 +65,21 @@ public class VistasMateria extends javax.swing.JInternalFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("AÑO AL QUE PERTENECE:");
 
+        jtCodmateria.setEnabled(false);
         jtCodmateria.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jtCodmateriaFocusLost(evt);
             }
         });
 
+        jtNommateria.setEnabled(false);
         jtNommateria.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jtNommateriaFocusLost(evt);
             }
         });
 
+        jtAniomateria.setEnabled(false);
         jtAniomateria.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jtAniomateriaFocusLost(evt);
@@ -98,6 +101,7 @@ public class VistasMateria extends javax.swing.JInternalFrame {
         });
 
         jbGuardar.setText("Guardar");
+        jbGuardar.setEnabled(false);
         jbGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbGuardarActionPerformed(evt);
@@ -169,6 +173,7 @@ public class VistasMateria extends javax.swing.JInternalFrame {
         jtAniomateria.setText("");
         jtCodmateria.setText("");
         jtNommateria.setText("");
+        activarCampos();
     }//GEN-LAST:event_jbNuevoActionPerformed
 
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
@@ -208,20 +213,33 @@ public class VistasMateria extends javax.swing.JInternalFrame {
         } else if (!jtAniomateria.getText().isEmpty() && (cmateria < 1 || cmateria >5)){
             JOptionPane.showMessageDialog(this, "El numero ingresado en el apartado Año al que pertenece debe ser entre 1 y 5.");
             jtAniomateria.requestFocus();
+        } else {
+            jbGuardar.setEnabled(true);
         }
     }//GEN-LAST:event_jtAniomateriaFocusLost
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
         // TODO add your handling code here:
         Materia materia=new Materia(Integer.parseInt(jtCodmateria.getText()), jtNommateria.getText(), Integer.parseInt(jtAniomateria.getText()) );
-        
         if (mat.add(materia)){
             JOptionPane.showMessageDialog(null,"La Materia a sido creada exitosamente!");
         } else {
             JOptionPane.showMessageDialog(null,"La Materia que intenta agregar ya existe!");
         }
+        desactivarCampos();
     }//GEN-LAST:event_jbGuardarActionPerformed
-
+    
+    private void desactivarCampos (){
+        jtCodmateria.setEnabled(false);
+        jtNommateria.setEnabled(false);
+        jtAniomateria.setEnabled(false);
+    }
+    
+    private void activarCampos (){
+        jtCodmateria.setEnabled(true);
+        jtNommateria.setEnabled(true);
+        jtAniomateria.setEnabled(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
