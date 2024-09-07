@@ -185,41 +185,28 @@ public class VistasAlumno extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbSalirActionPerformed
 
     private void jtLegajoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtLegajoFocusLost
-        // TODO add your handling code here:
-        String val = "[0-9]*";
-        if (!jtLegajo.getText().matches(val)){
-            JOptionPane.showMessageDialog(this, "En el apartado Legajo solo debe ingresar numeros.");
-            jtLegajo.requestFocus();
-        }
+
     }//GEN-LAST:event_jtLegajoFocusLost
 
     private void jtApellidoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtApellidoFocusLost
-        // TODO add your handling code here:
-        String val = "[a-zA-Z]*";
-        if (!jtApellido.getText().matches(val)){
-            JOptionPane.showMessageDialog(this, "En el apartado Apellido solo debe ingresar letras.");
-            jtApellido.requestFocus();
-        }
+
     }//GEN-LAST:event_jtApellidoFocusLost
 
     private void jtNombreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtNombreFocusLost
-        // TODO add your handling code here:
-        String val = "[a-zA-Z]*";
-        if (!jtNombre.getText().matches(val)){
-            JOptionPane.showMessageDialog(this, "En el apartado Nombre solo debe ingresar letras.");
-            jtNombre.requestFocus();
-        }
+
     }//GEN-LAST:event_jtNombreFocusLost
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
-        // TODO add your handling code here:
-        Alumno alumno=new Alumno(Integer.parseInt(jtLegajo.getText()),jtApellido.getText(),jtNombre.getText(),VistasMenu.materiasAgregadas);
+        boolean flag = validacionDeCampos();
+        if(flag) {
+            Alumno alumno=new Alumno(Integer.parseInt(jtLegajo.getText()),jtApellido.getText(),jtNombre.getText(),VistasMenu.materiasAgregadas);
         if (alu.add(alumno)){
             JOptionPane.showMessageDialog(null,"El alumno a sido agregado exitosamente!");
         } else {
             JOptionPane.showMessageDialog(null,"El alumno que intenta agregar ya existe!");
         }
         desactivarCampos();
+        }    
     }//GEN-LAST:event_jbGuardarActionPerformed
     
         private void desactivarCampos (){
@@ -234,6 +221,30 @@ public class VistasAlumno extends javax.swing.JInternalFrame {
         jtApellido.setEnabled(true);
         jtNombre.setEnabled(true);
         jbGuardar.setEnabled(true);
+    }
+    
+    private boolean validacionDeCampos(){
+        String val = "[a-zA-Z]*";
+        if (!jtApellido.getText().matches(val)){
+            JOptionPane.showMessageDialog(this, "En el apartado Apellido solo debe ingresar letras.");
+            jtApellido.requestFocus();
+            return false;
+        }
+        
+        String val1 = "[0-9]*";
+        if (!jtLegajo.getText().matches(val1)){
+            JOptionPane.showMessageDialog(this, "En el apartado Legajo solo debe ingresar numeros.");
+            jtLegajo.requestFocus();
+            return false;
+        }
+        String val2 = "[a-zA-Z]*";
+        if (!jtNombre.getText().matches(val2)){
+            JOptionPane.showMessageDialog(this, "En el apartado Nombre solo debe ingresar letras.");
+            jtNombre.requestFocus();
+            return false;
+        }
+        
+        return true;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

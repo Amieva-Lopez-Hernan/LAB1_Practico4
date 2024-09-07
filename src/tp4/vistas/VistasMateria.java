@@ -183,52 +183,65 @@ public class VistasMateria extends javax.swing.JInternalFrame {
 
     private void jtCodmateriaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtCodmateriaFocusLost
         // TODO add your handling code here:
-        String val = "[0-9]*";
-        
-        if (!jtCodmateria.getText().matches(val)){
-            JOptionPane.showMessageDialog(this, "En el apartado Codigo de Materia solo debe ingresar numeros.");
-            jtCodmateria.requestFocus();
-        }
+        jbGuardar.setEnabled(true);
     }//GEN-LAST:event_jtCodmateriaFocusLost
 
     private void jtNommateriaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtNommateriaFocusLost
         // TODO add your handling code here:
-        String val = "[a-zA-Z]*";
-        if (!jtNommateria.getText().matches(val)){
-            JOptionPane.showMessageDialog(this, "En el apartado Nombre de la Materia solo debe ingresar letras.");
-            jtNommateria.requestFocus();
-        }
+        jbGuardar.setEnabled(true);
     }//GEN-LAST:event_jtNommateriaFocusLost
 
     private void jtAniomateriaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtAniomateriaFocusLost
         // TODO add your handling code here:
-        String val = "[0-9]*";
-        int cmateria = 0;
-        if (jtAniomateria.getText().matches(val) && !jtAniomateria.getText().isEmpty()){
-            cmateria = Integer.parseInt(jtAniomateria.getText());
-        }
-        if (!jtAniomateria.getText().matches(val)){
-            JOptionPane.showMessageDialog(this, "En el apartado Año al que pertenece solo debe ingresar numeros.");
-            jtAniomateria.requestFocus();
-        } else if (!jtAniomateria.getText().isEmpty() && (cmateria < 1 || cmateria >5)){
-            JOptionPane.showMessageDialog(this, "El numero ingresado en el apartado Año al que pertenece debe ser entre 1 y 5.");
-            jtAniomateria.requestFocus();
-        } else {
-            jbGuardar.setEnabled(true);
-        }
+         jbGuardar.setEnabled(true);
     }//GEN-LAST:event_jtAniomateriaFocusLost
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
         // TODO add your handling code here:
-        Materia materia=new Materia(Integer.parseInt(jtCodmateria.getText()), jtNommateria.getText(), Integer.parseInt(jtAniomateria.getText()) );
+        
+        boolean flag = validacionDeCampos();
+        if(flag){
+            Materia materia=new Materia(Integer.parseInt(jtCodmateria.getText()), jtNommateria.getText(), Integer.parseInt(jtAniomateria.getText()) );
         if (mat.add(materia)){
             JOptionPane.showMessageDialog(null,"La Materia a sido creada exitosamente!");
         } else {
             JOptionPane.showMessageDialog(null,"La Materia que intenta agregar ya existe!");
         }
         desactivarCampos();
+        }
+        
     }//GEN-LAST:event_jbGuardarActionPerformed
     
+    private boolean validacionDeCampos(){
+        String val = "[0-9]*";
+        
+        if (!jtCodmateria.getText().matches(val)){
+            JOptionPane.showMessageDialog(this, "En el apartado Codigo de Materia solo debe ingresar numeros.");
+            jtCodmateria.requestFocus();
+            return false;
+        }
+        String val2 = "[a-zA-Z]*";
+        if (!jtNommateria.getText().matches(val2)){
+            JOptionPane.showMessageDialog(this, "En el apartado Nombre de la Materia solo debe ingresar letras.");
+            jtNommateria.requestFocus();
+            return false;
+        }
+        String val3 = "[0-9]*";
+        int cmateria = 0;
+        if (jtAniomateria.getText().matches(val3) && !jtAniomateria.getText().isEmpty()){
+            cmateria = Integer.parseInt(jtAniomateria.getText());
+        }
+        if (!jtAniomateria.getText().matches(val3)){
+            JOptionPane.showMessageDialog(this, "En el apartado Año al que pertenece solo debe ingresar numeros.");
+            jtAniomateria.requestFocus();
+            return false;
+        } else if (!jtAniomateria.getText().isEmpty() && (cmateria < 1 || cmateria >5)){
+            JOptionPane.showMessageDialog(this, "El numero ingresado en el apartado Año al que pertenece debe ser entre 1 y 5.");
+            jtAniomateria.requestFocus();
+            return false;
+        }
+        return true;
+    }
     private void desactivarCampos (){
         jtCodmateria.setEnabled(false);
         jtNommateria.setEnabled(false);
