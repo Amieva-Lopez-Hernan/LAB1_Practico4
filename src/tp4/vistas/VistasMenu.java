@@ -34,6 +34,7 @@ public class VistasMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu5 = new javax.swing.JMenu();
         escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -44,6 +45,8 @@ public class VistasMenu extends javax.swing.JFrame {
         jmiInscribir = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jmiSalir = new javax.swing.JMenuItem();
+
+        jMenu5.setText("jMenu5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inscripción a Materias");
@@ -203,6 +206,7 @@ public class VistasMenu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jmiAgreAlumno;
     private javax.swing.JMenuItem jmiAgreMateria;

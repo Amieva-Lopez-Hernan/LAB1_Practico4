@@ -36,12 +36,12 @@ public class VistasMateria extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jtCodmateria = new javax.swing.JTextField();
-        jtNommateria = new javax.swing.JTextField();
-        jtAniomateria = new javax.swing.JTextField();
         jbSalir = new javax.swing.JButton();
         jbNuevo = new javax.swing.JButton();
         jbGuardar = new javax.swing.JButton();
+        jtCodmateria = new javax.swing.JTextField();
+        jtNommateria = new javax.swing.JTextField();
+        jtAniomateria = new javax.swing.JTextField();
 
         setClosable(true);
 
@@ -65,27 +65,6 @@ public class VistasMateria extends javax.swing.JInternalFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("AÑO AL QUE PERTENECE:");
 
-        jtCodmateria.setEnabled(false);
-        jtCodmateria.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jtCodmateriaFocusLost(evt);
-            }
-        });
-
-        jtNommateria.setEnabled(false);
-        jtNommateria.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jtNommateriaFocusLost(evt);
-            }
-        });
-
-        jtAniomateria.setEnabled(false);
-        jtAniomateria.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jtAniomateriaFocusLost(evt);
-            }
-        });
-
         jbSalir.setText("Salir");
         jbSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +87,12 @@ public class VistasMateria extends javax.swing.JInternalFrame {
             }
         });
 
+        jtCodmateria.setEnabled(false);
+
+        jtNommateria.setEnabled(false);
+
+        jtAniomateria.setEnabled(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -117,7 +102,7 @@ public class VistasMateria extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 198, Short.MAX_VALUE)
                         .addComponent(jbGuardar)
                         .addGap(18, 18, 18)
                         .addComponent(jbNuevo)
@@ -128,16 +113,16 @@ public class VistasMateria extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtCodmateria, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jtCodmateria, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jtAniomateria, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
-                                    .addComponent(jtNommateria))))
-                        .addGap(0, 10, Short.MAX_VALUE)))
+                                    .addComponent(jtNommateria)
+                                    .addComponent(jtAniomateria, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -146,13 +131,13 @@ public class VistasMateria extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtCodmateria, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(jtCodmateria))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtNommateria, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(jtNommateria))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
@@ -181,21 +166,6 @@ public class VistasMateria extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_jbSalirActionPerformed
 
-    private void jtCodmateriaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtCodmateriaFocusLost
-        // TODO add your handling code here:
-        jbGuardar.setEnabled(true);
-    }//GEN-LAST:event_jtCodmateriaFocusLost
-
-    private void jtNommateriaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtNommateriaFocusLost
-        // TODO add your handling code here:
-        jbGuardar.setEnabled(true);
-    }//GEN-LAST:event_jtNommateriaFocusLost
-
-    private void jtAniomateriaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtAniomateriaFocusLost
-        // TODO add your handling code here:
-         jbGuardar.setEnabled(true);
-    }//GEN-LAST:event_jtAniomateriaFocusLost
-
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
         // TODO add your handling code here:
         
@@ -220,7 +190,7 @@ public class VistasMateria extends javax.swing.JInternalFrame {
             jtCodmateria.requestFocus();
             return false;
         }
-        String val2 = "[a-zA-Z]*";
+        String val2 = "[a-zA-Z\\s]*";
         if (!jtNommateria.getText().matches(val2)){
             JOptionPane.showMessageDialog(this, "En el apartado Nombre de la Materia solo debe ingresar letras.");
             jtNommateria.requestFocus();
@@ -246,12 +216,14 @@ public class VistasMateria extends javax.swing.JInternalFrame {
         jtCodmateria.setEnabled(false);
         jtNommateria.setEnabled(false);
         jtAniomateria.setEnabled(false);
+        jbGuardar.setEnabled(false);
     }
     
     private void activarCampos (){
         jtCodmateria.setEnabled(true);
         jtNommateria.setEnabled(true);
         jtAniomateria.setEnabled(true);
+        jbGuardar.setEnabled(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
