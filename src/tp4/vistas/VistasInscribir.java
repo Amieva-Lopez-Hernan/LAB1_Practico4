@@ -15,15 +15,13 @@ import tp4.entidades.Materia;
 public class VistasInscribir extends javax.swing.JInternalFrame {
     private HashSet <Alumno> alu;
     private HashSet <Materia> mat;
-    private HashSet<Materia>matAgreg;
     /**
      * Creates new form VistasIncribir
      */
-    public VistasInscribir(HashSet<Alumno>alu, HashSet <Materia> mat, HashSet<Materia>matAgreg) {
+    public VistasInscribir(HashSet<Alumno>alu, HashSet <Materia> mat) {
         initComponents();
-        this.alu = VistasMenu.listaAlumnos;
-        this.mat = VistasMenu.listaMaterias;
-        this.matAgreg=VistasMenu.materiasAgregadas;
+        this.alu = Colegio.listaAlumnos;
+        this.mat = Colegio.listaMaterias;
         agregarAlumno();
         agregarMateria();
     }

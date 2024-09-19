@@ -19,7 +19,7 @@ public class VistasMateria extends javax.swing.JInternalFrame {
      */
     public VistasMateria(HashSet <Materia>mat) {
         initComponents();
-        this.mat=VistasMenu.listaMaterias;
+        this.mat=Colegio.listaMaterias;
     }
    
 

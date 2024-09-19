@@ -5,6 +5,7 @@
 package tp4.vistas;
 
 import java.util.HashSet;
+import javax.swing.JOptionPane;
 import tp4.entidades.Alumno;
 import tp4.entidades.Materia;
 
@@ -12,17 +13,35 @@ import tp4.entidades.Materia;
  *
  * @author Hernan
  */
-public class VistasMenu extends javax.swing.JFrame {
+public class Colegio extends javax.swing.JFrame {
     
     public static HashSet<Alumno> listaAlumnos= new HashSet ();
     public static HashSet<Materia> listaMaterias= new HashSet ();
-    public static HashSet<Materia> materiasAgregadas=new HashSet();
 
     /**
      * Creates new form NewJFrame
      */
-    public VistasMenu() {
+    public Colegio() {
         initComponents();
+        Materia mat1 = new Materia (1,"Ingles 1",1);
+        listaMaterias.add(mat1);
+        Materia mat2 = new Materia (2,"Matemáticas",1);
+        listaMaterias.add(mat2);
+        Materia mat3 = new Materia (3,"Laboratorio 1",1);
+        listaMaterias.add(mat3);
+        Alumno alu1 = new Alumno (1001,"López","Martin");
+        listaAlumnos.add(alu1);
+        Alumno alu2 = new Alumno (1002,"Martínez","Brenda");
+        listaAlumnos.add(alu2);
+        alu1.agregarMateria(mat1);
+        alu1.agregarMateria(mat2);
+        alu1.agregarMateria(mat3);
+        alu2.agregarMateria(mat1);
+        alu2.agregarMateria(mat2);
+        alu2.agregarMateria(mat3);
+        alu2.agregarMateria(mat3);
+        JOptionPane.showMessageDialog(this, "El alumno " + alu1.getApellido() + " " + alu1.getNombre() + " esta inscripto en " + alu1.cantMaterias() + " materias.");
+        JOptionPane.showMessageDialog(this, "El alumno " + alu2.getApellido() + " " + alu2.getNombre() + " esta inscripto en " + alu2.cantMaterias() + " materias.");
     }
 
     /**
@@ -143,7 +162,7 @@ public class VistasMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         escritorio.removeAll();
         escritorio.repaint();
-        VistasAlumno vistaAlum= new VistasAlumno(listaAlumnos, materiasAgregadas);
+        VistasAlumno vistaAlum= new VistasAlumno(listaAlumnos);
         vistaAlum.setVisible(true);
         escritorio.add(vistaAlum);
         escritorio.moveToFront(vistaAlum);
@@ -153,7 +172,7 @@ public class VistasMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         escritorio.removeAll();
         escritorio.repaint();
-        VistasInscribir vistaInsc= new VistasInscribir(listaAlumnos,listaMaterias, materiasAgregadas);
+        VistasInscribir vistaInsc= new VistasInscribir(listaAlumnos,listaMaterias);
         vistaInsc.setVisible(true);
         escritorio.add(vistaInsc);
         escritorio.moveToFront(vistaInsc);
@@ -181,21 +200,23 @@ public class VistasMenu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistasMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Colegio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistasMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Colegio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistasMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Colegio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistasMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Colegio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistasMenu().setVisible(true);
+                new Colegio().setVisible(true);
             }
         });
     }

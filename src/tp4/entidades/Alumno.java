@@ -15,13 +15,12 @@ public class Alumno {
     private int legajo;
     private String apellido;
     private String nombre;
-    private HashSet <Materia> materias ;
+    private HashSet <Materia> materias = new HashSet();
 
-    public Alumno(int legajo, String apellido, String nombre, HashSet<Materia>materias) {
+    public Alumno(int legajo, String apellido, String nombre) {
         this.legajo = legajo;
         this.apellido = apellido;
         this.nombre = nombre;
-        this.materias= materias;
     }
 
     public int getLegajo() {
